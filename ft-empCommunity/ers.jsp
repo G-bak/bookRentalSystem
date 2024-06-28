@@ -16,18 +16,22 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-
-    <div class="header">
-        <h1>도서 대여 시스템</h1>
-    </div>
-	<div class="section-title">"OOO"님 환영합니다.<button class="right" onclick="employeeClick()">관리자 공지사항</button></div><br/>
+   	<%
+	//로그인 입력한 값을 기준으로 누구인지 확인
+	request.setCharacterEncoding("UTF-8");
+   	String ename = (String) session.getAttribute("ename");
+   	String empno = session.getAttribute("empno").toString(); 
+   	if (ename != null) {
+	%>
+    <div class="header"><h1>도서 대여 시스템</h1></div>
+	<div class="section-title">"<%=ename %>"님 환영합니다.<button class="right" onclick="employeeClick()">관리자 공지사항</button></div><br/>
 	<div class="employee" id="employee">
 	    <h1> 관리자 공지사항 </h1><br/>
         <button class="right" id="btn" onclick="communityClick()"> 공지 추가 </button><br/><br/>
         	<div class="community" id="community">
         		<h3> 공지사항 추가 </h3><br/>
 		        <form action="community_action.jsp" method="post" id="frm_community">
-	            <label> 직원 번호 : <input type ="text" id="input_empno" name= "empno"> </label><br/><br/>
+	            <label> 직원 번호 : <input type ="text" id="input_empno" name= "empno" value="<%=empno%>"> </label><br/><br/>
 	            <label> 메시지 : &nbsp;&nbsp;&nbsp;<input type ="text" id="input_message" name= "message"> </label><br/><br/><br/>
 	            <button type = "submit" id="btn"> 공지 추가 </button>
         		</form>	        
@@ -58,7 +62,12 @@
 	    </tbody>
 	    </table>          
     </div>
-    <div class="section-title">회원 정보</div>
+    <div class="section-title">회원 정보<button class="right" onclick="logOut()">log out</button></div>
+    <script>
+	function logOut(){
+	location.href="logout_action.jsp";
+	}
+	</script>
     <div class="search-box">
         <div class="search-group">
             <input type="text" id="customerSearch1" placeholder="회원번호">
@@ -245,37 +254,37 @@
     </div>
     <div class="search-box">
         <div class="search-group">
-        	<form action="test.jsp" method="post" id="frm_bookno">
+        	<form action="ers.jsp" method="post" id="frm_bookno">
 	            <input type="text" id="loanSearch1" placeholder="도서번호" name="bookno">
 	            <button type="submit">검색</button>
             </form>
         </div>
         <div class="search-group">
-        	<form action="test.jsp" method="post">
+        	<form action="ers.jsp" method="post">
 	            <input type="text" id="loanSearch1" placeholder="도서제목" name="bname">
 	            <button type="submit">검색</button>
             </form>
         </div>
         <div class="search-group">
-        	<form action="test.jsp" method="post">
+        	<form action="ers.jsp" method="post">
 	            <input type="text" id="loanSearch2" placeholder="장르명" name="gname">
 	            <button type="submit">검색</button>
             </form>
         </div>
         <div class="search-group">
-        	<form action="test.jsp" method="post">
+        	<form action="ers.jsp" method="post">
 	            <input type="text" id="loanSearch2" placeholder="저자" name="bauthor">
 	            <button type="submit">검색</button>
             </form>
         </div>
         <div class="search-group">
-        	<form action="test.jsp" method="post">
+        	<form action="ers.jsp" method="post">
 	            <input type="text" id="loanSearch2" placeholder="출판사" name="bpublish">
 	            <button type="submit">검색</button>
             </form>
         </div>
         <div class="search-group">
-        	<form action="test.jsp" method="post">
+        	<form action="ers.jsp" method="post">
 	            <input type="text" id="loanSearch2" placeholder="재고" name="bcount">
 	            <button type="submit">검색</button>
             </form>
@@ -424,7 +433,16 @@
 			%> 
 	     </tbody>
     </table>
-
+    <% 
+    } else {
+    %>
+		<script>
+			alert('로그인을 해주세요');
+			location.href = 'empLogin.jsp';	//
+		</script>
+	 <% 
+    }
+    %>
     <script src="js/script.js"></script>
 
 </body>
