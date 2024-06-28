@@ -19,13 +19,13 @@
    	<%
 	//로그인 입력한 값을 기준으로 누구인지 확인
 	request.setCharacterEncoding("UTF-8");
-   	String ename = (String) session.getAttribute("ename");
-   	String empno = session.getAttribute("empno").toString(); 
+   	String ename = (String) session.getAttribute("ename"); /* 로그인액션에서 정보를 받아 이름 확인 */  	
    	if (ename != null) {
+   	String empno = session.getAttribute("empno").toString(); /* 로그인액션에서 정보를 받아 사번 확인 */	
 	%>
     <div class="header"><h1>도서 대여 시스템</h1></div>
 	<div class="section-title">"<%=ename %>"님 환영합니다.<button class="right" onclick="employeeClick()">관리자 공지사항</button></div><br/>
-	<div class="employee" id="employee">
+	<div class="employee" id="employee"><!-- 모달창 -->
 	    <h1> 관리자 공지사항 </h1><br/>
         <button class="right" id="btn" onclick="communityClick()"> 공지 추가 </button><br/><br/>
         	<div class="community" id="community">
