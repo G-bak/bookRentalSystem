@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.section-title {
+    background-color: #e9ecef;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    margin-bottom: -1px; /* Remove the space between section title and table */
+}
+
+.search-box {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-group {
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.search-group input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-group button {
+    padding: 10px;
+    border: none;
+    background-color: #dcdcdc;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    user-select: none;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background-color: #dcdcdc;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+    user-select: none;
+}
+
+.search-group button:hover {
+    background-color: #bbb;
+}
+
+/* 여기부터 제가 임의로 추가한 겁니다 */
+
+.btn {
+    padding: 3px 6px;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    color: #616161;
+    cursor: pointer;
+    user-select: none;
+}
+
+.modal-container {
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    background-color: #F5F5F5;
+    border: 3px solid black;
+    position: fixed;
+    top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: scroll;
+}
+
+.book-quantity-rental-status-container {
+	display: none;
+}
+
+.book-reserve-container {
+	display: none;
+}
+
+.reserve-status-container {
+	display: none;
+}
+
+.reserve-expiration-status-container {
+	display: none;
+}
+
+.reserve-status-title {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+#reserve-status-table th{
+    background-color: #ebeaea;
+    border: 1px solid #b8b8b8;
+    text-align: left;
+}
+
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 1.5px solid #636262;
+    background-color: #ebeaea;
+    padding: 5px;
+    border-radius: 25%;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.book-reserve-title {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+#book-reserve-table th{
+    background-color: #ebeaea;
+    border: 1px solid #b8b8b8;
+    text-align: left;
+}
+
+.scroll {
+    overflow-x: auto; /* 가로 스크롤이 필요할 경우 */
+    max-width: 200px; /* 최대 너비 지정 */
+    white-space: nowrap; /* 텍스트가 너무 길 때 줄 바꿈 없이 한 줄로 유지 */
+}
+
+.reserve-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    background-color: #F5F5F5;
+    border: 3px solid black;
+    position: fixed;
+    top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reserve-container2 {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    background-color: #F5F5F5;
+    border: 3px solid black;
+    position: fixed;
+    top: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.reserve-title {
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+#input_br_membno {
+    margin-top: 15px;
+}
