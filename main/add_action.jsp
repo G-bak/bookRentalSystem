@@ -27,7 +27,7 @@
 	  %>
 	  	<script>
 	  		alert("저장 성공");
-	  		location.href('bookRentalSystem.jsp');
+	  		location.href = 'bookRentalSystem.jsp';
 	  	</script>
 		<% } else { %>
 		<script>
